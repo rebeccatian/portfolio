@@ -1,12 +1,13 @@
-import { MouseEvent, useState } from 'react'
+import { MouseEvent, MouseEventHandler, useEffect, useState } from 'react'
 import FilterTag from './FilterTag'
-import Card from './Card'
-import { cards } from '../data'
+import { cards, CardTypes } from '../data'
+import Popup from './Popup'
+import { ListItem } from '@mui/material'
 
 const Portfolio = () => {
     const tags = ["frontend", "mobile", "backend", "design"];
     const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend", "design"]);
-    const [opened, setOpened] = useState(0);
+    const [openedItems, setOpenedItems] = useState<string[]>([])
     const handleOnClick = (event: MouseEvent<HTMLButtonElement>, value: string) => {
         if (selectedItems.includes(value)) {
             setSelectedItems(selectedItems.filter(item => item !== value));
@@ -16,6 +17,26 @@ const Portfolio = () => {
         }
         
     }
+
+    // const [coordinates, setCoordinates] = useState({bottom: 0, left: 0});
+
+    const handleOnClose = (event: MouseEvent<HTMLButtonElement>) => {
+        const value = event.currentTarget.value;
+        event.preventDefault();
+        console.log(value);
+        setOpenedItems(item => (
+            item.filter(opened => opened !== value)
+        ));
+    }
+
+    const handleOnOpen = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const value = event.currentTarget.value;
+        setOpenedItems(item => (
+            item.includes(value) ? item.filter(opened => opened !== value) : [...item, value]
+        ));
+    }
+
     return (
         <div className="flex flex-col h-[70vh] overflow-auto">
             <div className='p-9'>
@@ -38,30 +59,45 @@ const Portfolio = () => {
                         cards.filter(item => selectedItems.includes(item.category[0] || (item.category[0] && item.category[1]))).map(
                             item => {
                                 return (
-                                    <Card
-                                        key={item.title}
-                                        front={
-                                            <div className='flex'>
-                                                <div>
-                                                    <p className='text-2xl'>{item.title}</p>
-                                                    <p className='text-green-800'>{item.category[1] ? `${item.category[0]} + ${item.category[1]}` : item.category[0]}</p>
-                                                    <p className='text-green-500 text-sm text-md'>{item.subtitle}</p>
-                                                </div>
-                                            </div>
-                                        }
-                                        back={
-                                            <div>
-                                                <a className="text-green-300 underline" href={item.link}>Link to Project</a>
-                                                <img src={item.image2}/>
-                                                <p>{item.description}</p>
-                                            </div>
-                                        }
-                                    />
-
+                                    <button key={item.title} value={item.title} className='w-full text-left p-5 hover:border hover:border-green-900' 
+                                        onClick={handleOnOpen}
+                                    >
+                                        <p className='text-2xl'>{item.title}</p>
+                                        <p className='text-green-800'>{item.category[1] ? `${item.category[0]} + ${item.category[1]}` : item.category[0]}</p>
+                                        <p className='text-green-500 text-sm text-md'>{item.subtitle}</p>
+                                    </button>
                                 )
                             }
                         )
                     }
+            </div>
+            <div>
+                {
+                    cards.filter(item => openedItems.includes(item.title)).map(
+                        (card, index) => {
+                            return (
+                                <Popup
+                                    key={card.title}
+                                    value={card.title} 
+                                    coordinates={
+                                        {
+                                            top: 50 + index*10,
+                                            left: 100 + index*10
+                                        }
+                                    }
+                                    onClose={handleOnClose}
+                                    content={
+                                        <div>
+                                            <a className="text-green-300 underline" href={card.link}>Link to Project</a>
+                                            <img src={card.image2}/>
+                                            <p>{card.description}</p>
+                                        </div>
+                                    }
+                                /> 
+                            )
+                        }
+                    )
+                }
             </div>
         </div>
       )

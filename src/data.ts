@@ -1,4 +1,4 @@
-interface cardTypes {
+export interface CardTypes {
     category: string[]
     title: string;
     image2: string
@@ -7,7 +7,7 @@ interface cardTypes {
     link: string;
 }
 
-export const cards: cardTypes[] = [
+export const cards: CardTypes[] = [
     {
         category:["frontend", "backend"], 
         title: "Ticket Tracker",  
