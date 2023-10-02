@@ -26,9 +26,14 @@ body {
 }
 
 button:hover {
-  color:rgb(131, 255, 137)
+  color:rgb(131, 255, 137);
 }
 
-.background-image {
-  background-image: url('../../public/bg.png');
+a {
+  color: rgb(180, 253, 184);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: rgb(0, 86, 4);
 }

@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import Portfolio from "@/components/Portfolio";
+import Portfolio from "./portfolio";
 import { Tab } from "@headlessui/react";
 import { ReactNode, useState } from "react";
 import Image from 'next/image';
@@ -93,7 +93,16 @@ export default function Page({ children } : MenuProps) {
                         <Tab.Panel className="text-left md:ml-32 lg:ml-24">
                             <Portfolio/>
                         </Tab.Panel>
-                        <Tab.Panel className="text-left">Content 3</Tab.Panel>
+                        <Tab.Panel className="text-left space-y-4">
+                            <p className="text-xl">Social Links</p>
+                            <div className="space-x-4">
+                                <a href="https://github.com/rebeccatian">Github</a>
+                                <a href="https://linkedin.com/in/rebeccatianr">LinkedIn</a>
+                                <a href="mailto: rebeccatianr@gmail.com">Email</a>
+                            </div>
+                            <p className="text-xl">Resume</p>
+                            <iframe></iframe>
+                        </Tab.Panel>
                     </Tab.Panels>
                 </div>
         </Tab.Group>

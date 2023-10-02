@@ -18,17 +18,17 @@ export default function Popup(
 
     return (
         <div 
-            className="absolute bg-white w-[80%] md:w-1/2 lg:w-1/3 h-[70%] flex flex-col border border-green-900"
+            className="absolute bg-white w-[80%] md:w-1/2 lg:w-1/3 h-fit flex flex-col border border-green-900"
             style={{top: `${coordinates.top}px`, left: `${coordinates.left}px`}}
         >
-        <div>
-            <button value={value} className="ml-2 mt-1 flex justify-between" onClick={onClose}>
-                <CloseIcon />
-            </button>
+            <div>
+                <button value={value} className="ml-2 mt-1 flex justify-between" onClick={onClose}>
+                    <CloseIcon />
+                </button>
+            </div>
+            <div className="bg-black w-[95%] h-[80%] ml-auto mr-auto p-3 border-b-8 border-white">
+                {content}
+            </div>
         </div>
-        <div className="bg-black w-[95%] h-[90%] ml-auto mr-auto p-3">
-            {content}
-        </div>
-    </div>
     );
 }

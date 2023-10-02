@@ -1,12 +1,12 @@
-import { MouseEvent, MouseEventHandler, useEffect, useState } from 'react'
+import { MouseEvent, useState } from 'react';
+import Image from 'next/image';
 import FilterTag from './FilterTag'
-import { cards, CardTypes } from '../data'
+import { cards } from '../data'
 import Popup from './Popup'
-import { ListItem } from '@mui/material'
 
 const Portfolio = () => {
-    const tags = ["frontend", "mobile", "backend", "design"];
-    const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend", "design"]);
+    const tags = ["frontend", "mobile", "backend"];
+    const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend"]);
     const [openedItems, setOpenedItems] = useState<string[]>([])
     const handleOnClick = (event: MouseEvent<HTMLButtonElement>, value: string) => {
         if (selectedItems.includes(value)) {
@@ -18,28 +18,23 @@ const Portfolio = () => {
         
     }
 
-    // const [coordinates, setCoordinates] = useState({bottom: 0, left: 0});
-
     const handleOnClose = (event: MouseEvent<HTMLButtonElement>) => {
         const value = event.currentTarget.value;
-        event.preventDefault();
-        console.log(value);
-        setOpenedItems(item => (
-            item.filter(opened => opened !== value)
+        setOpenedItems(items => (
+            items.filter(opened => opened !== value)
         ));
     }
 
-    const handleOnOpen = (event: MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-        const value = event.currentTarget.value;
-        setOpenedItems(item => (
-            item.includes(value) ? item.filter(opened => opened !== value) : [...item, value]
-        ));
+    const handleOnOpen = (event: MouseEvent<HTMLButtonElement>, value: string) => {
+        setOpenedItems(items => (
+                items.includes(value) ? items.filter(opened => opened !== value) : [...items, value]
+            )
+        );
     }
 
     return (
-        <div className="flex flex-col h-[70vh] overflow-auto">
-            <div className='p-9'>
+        <div className="flex flex-col h-[80vh] overflow-auto">
+            <div className='p-4'>
                 <h1 className='text-xl'>My Works</h1>
                 <h2 className='py-4 text-sm'>Filters</h2>
 
@@ -59,10 +54,10 @@ const Portfolio = () => {
                         cards.filter(item => selectedItems.includes(item.category[0] || (item.category[0] && item.category[1]))).map(
                             item => {
                                 return (
-                                    <button key={item.title} value={item.title} className='w-full text-left p-5 hover:border hover:border-green-900' 
-                                        onClick={handleOnOpen}
+                                    <button type="button" key={item.title} value={item.title} className='w-full text-left p-5 hover:border hover:border-green-900' 
+                                        onClick={event => handleOnOpen(event, item.title)}
                                     >
-                                        <p className='text-2xl'>{item.title}</p>
+                                        <p className='text-md md:text-xl'>{item.title}</p>
                                         <p className='text-green-800'>{item.category[1] ? `${item.category[0]} + ${item.category[1]}` : item.category[0]}</p>
                                         <p className='text-green-500 text-sm text-md'>{item.subtitle}</p>
                                     </button>
@@ -88,9 +83,10 @@ const Portfolio = () => {
                                     onClose={handleOnClose}
                                     content={
                                         <div>
-                                            <a className="text-green-300 underline" href={card.link}>Link to Project</a>
-                                            <img src={card.image2}/>
-                                            <p>{card.description}</p>
+                                            <Image src={card.image2} alt="SeatGeek Project Image"/>
+                                            <p className="mt-4 ">{card.description}</p>
+                                            <a className="text-green-300 underline" href={card.link}>{card.link2 ? '8-Ball' : 'Link to Project'}</a>
+                                            <a className={`text-green-300 underline ${!card.link2 ? 'hidden' : 'block'}`}>Rock, Paper, Scissors</a>
                                         </div>
                                     }
                                 /> 
