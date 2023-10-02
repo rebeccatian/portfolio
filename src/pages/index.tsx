@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="ml-auto mr-auto">
-            <div className='mt-8 min-w-[80%] max-w-[90%] h-[90vh] p-7 ml-auto mr-auto relative'>
+            <div className='mt-8 min-w-[80%] max-w-[90%] h-[90vh] p-3 md:p-7 ml-auto mr-auto relative'>
                 <Page />
           </div>
       </main>

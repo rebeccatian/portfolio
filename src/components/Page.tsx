@@ -39,55 +39,56 @@ export default function Page({ children } : MenuProps) {
                     : <span className="text-base inline-block text-green-300">Software Engineer</span>
                 }
             <Tab.Group vertical selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-                <div className="flex justify-between h-fit relative">
+                <div className="flex justify-between relative h-[90%]">
                     <Tab.List className="flex flex-col mt-12">
                         <Tab className="text-left w-fit hover:cursor-pointer ui-selected:text-green-200">Home</Tab>
                         <Tab className="text-left w-fit hover:cursor-pointer ui-selected:text-green-200">Projects</Tab>
                         <Tab className="text-left w-fit hover:cursor-pointer ui-selected:text-green-200">Info</Tab>
                     </Tab.List>
-                    <Tab.Panels className="md:mt-0 mt-12 w-2/3 md:w-3/5">
-                        <Tab.Panel className="text-left text-xs md:text-sm flex flex-col w-full">
-                            <div className="mb-3 self-end w-3/4 h-3/4 md:w-1/3 md:h-1/3">
-                                <Image src={profilePic} alt="picture of me"/>
-                            </div>
-                            <div className="border border-green-600 p-3 w-full">
-                                <TypeAnimation
-                                    sequence={[
-                                        'Beep bop, welcome to my portfolio. I am a lover of exciting technology, \n creative designs, and honestly just learning anything new! \n' +
-                                        'Currently, I am working at MillerKnoll as an associate software engineer where my focus is integrating cross-platform technology solutions using TypeScript, React.js, Next.js.',
-                                        () => {
-                                            setIsButtonVisible(true);
-                                        }
-                                    ]}
-                                    wrapper="span"
-                                    speed={85}
-                                    style={{ fontSize: '12px', display: 'inline-block', color: 'rgb(2, 180, 11)'}}
-                                    repeat={0}
-                                    cursor={false}
-                                />
-                            </div>
-                            <div className="self-end">
-                                {
-                                    isButtonVisible && 
-                                    <button className="border border-green-600 hover:bg-green-900 mt-5 p-3"
-                                        onClick={() => {setSelectedIndex(1)}}
-                                    >
+                    <Tab.Panels className="md:mt-0 mt-12 w-[80%] md:w-3/5">
+                        <Tab.Panel className="text-left text-xs md:text-sm flex flex-col w-full h-full overflow-auto">
+                            <div className="h-screen flex flex-col">
+                                <div className="mb-3 self-end w-3/4 sm:w-1/3">
+                                    <Image src={profilePic} alt="picture of me"/>
+                                </div>
+                                <div className="border border-green-600 p-3 w-full">
                                     <TypeAnimation
                                         sequence={[
-                                            'See my works',
+                                            'Beep bop, welcome to my portfolio. I am a lover of exciting technology, creative designs, and honestly just learning anything new! ' +
+                                            'Currently, I am working at MillerKnoll as an associate software engineer where my focus is to integrate cross-platform technology solutions.',
                                             () => {
-                                                setIsDone(true);
+                                                setIsButtonVisible(true);
                                             }
                                         ]}
                                         wrapper="span"
-                                        speed={50}
+                                        speed={85}
                                         style={{ fontSize: '12px', display: 'inline-block', color: 'rgb(2, 180, 11)'}}
                                         repeat={0}
                                         cursor={false}
                                     />
-                                    </button>
-                                }
-                                
+                                </div>
+                                <div className="self-end">
+                                    {
+                                        isButtonVisible && 
+                                        <button className="border border-green-600 hover:bg-green-900 mt-5 p-3"
+                                            onClick={() => {setSelectedIndex(1)}}
+                                        >
+                                        <TypeAnimation
+                                            sequence={[
+                                                'See my works',
+                                                () => {
+                                                    setIsDone(true);
+                                                }
+                                            ]}
+                                            wrapper="span"
+                                            speed={50}
+                                            style={{ fontSize: '12px', display: 'inline-block', color: 'rgb(2, 180, 11)'}}
+                                            repeat={0}
+                                            cursor={false}
+                                        />
+                                        </button>
+                                    }
+                                </div>
                             </div>
                         </Tab.Panel>
                         <Tab.Panel className="text-left md:ml-32 lg:ml-24">

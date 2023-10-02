@@ -18,7 +18,7 @@ export default function Popup(
 
     return (
         <div 
-            className="absolute bg-white w-[80%] md:w-1/2 lg:w-1/3 h-fit flex flex-col border border-green-900"
+            className="absolute bg-white w-4/5 text-sm sm:text-lg sm:w-1/2 lg:w-1/3 h-fit flex flex-col border border-green-900"
             style={{top: `${coordinates.top}px`, left: `${coordinates.left}px`}}
         >
             <div>
@@ -26,7 +26,7 @@ export default function Popup(
                     <CloseIcon />
                 </button>
             </div>
-            <div className="bg-black w-[95%] h-[80%] ml-auto mr-auto p-3 border-b-8 border-white">
+            <div className="bg-black w-[95%] sm:h-fit ml-auto mr-auto p-3 border-b-8 border-white">
                 {content}
             </div>
         </div>
