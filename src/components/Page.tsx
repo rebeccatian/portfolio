@@ -6,7 +6,6 @@ import Image from 'next/image';
 import profilePic from '../../public/me.png';
 import resumePic from '../../public/resume.png';
 import { TypeAnimation } from 'react-type-animation';
-import Link from "next/link";
 
 interface MenuProps {
     children?: ReactNode
