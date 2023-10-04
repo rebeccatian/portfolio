@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import Portfolio from "./Portfolio";
+import Portfolio from "./portfolio";
 import { Tab } from "@headlessui/react";
 import { ReactNode, useState } from "react";
 import Image from 'next/image';
