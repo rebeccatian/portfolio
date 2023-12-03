@@ -1,13 +1,13 @@
 import { MouseEvent, useState } from 'react';
 import Image from 'next/image';
 import FilterTag from './FilterTag'
-import { cards } from '../data'
+import { cards, CardTypes } from '../data'
 import Popup from './Popup'
 
 const Portfolio = () => {
     const tags = ["frontend", "mobile", "backend"];
     const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend"]);
-    const [openedItems, setOpenedItems] = useState<string[]>([])
+    const [openedItems, setOpenedItems] = useState<CardTypes[]>([])
     const handleOnClick = (event: MouseEvent<HTMLButtonElement>, value: string) => {
         if (selectedItems.includes(value)) {
             setSelectedItems(selectedItems.filter(item => item !== value));
@@ -21,11 +21,11 @@ const Portfolio = () => {
     const handleOnClose = (event: MouseEvent<HTMLButtonElement>) => {
         const value = event.currentTarget.value;
         setOpenedItems(items => (
-            items.filter(opened => opened !== value)
+            items.filter(opened => opened.title !== value)
         ));
     }
 
-    const handleOnOpen = (event: MouseEvent<HTMLButtonElement>, value: string) => {
+    const handleOnOpen = (value: CardTypes) => {
         setOpenedItems(items => (
                 items.includes(value) ? items.filter(opened => opened !== value) : [...items, value]
             )
@@ -55,7 +55,7 @@ const Portfolio = () => {
                             item => {
                                 return (
                                     <button type="button" key={item.title} value={item.title} className='w-full text-left p-5 hover:border hover:border-green-900' 
-                                        onClick={event => handleOnOpen(event, item.title)}
+                                        onClick={() => handleOnOpen(item)}
                                     >
                                         <p className='text-md md:text-xl'>{item.title}</p>
                                         <p className='text-green-800'>{item.category[1] ? `${item.category[0]} + ${item.category[1]}` : item.category[0]}</p>
@@ -68,7 +68,7 @@ const Portfolio = () => {
             </div>
             <div>
                 {
-                    cards.filter(item => openedItems.includes(item.title)).map(
+                    openedItems.map(
                         (card, index) => {
                             return (
                                 <Popup
