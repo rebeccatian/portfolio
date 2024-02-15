@@ -77,7 +77,7 @@ const Portfolio = () => {
                                     coordinates={
                                         {
                                             top: 50 + index*10,
-                                            left: 100 + index*10
+                                            left: 50 + index*10
                                         }
                                     }
                                     onClose={handleOnClose}

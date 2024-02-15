@@ -14,7 +14,7 @@ const FilterTag = ({
 }) => {
     const [selected, setSelected] = useState(true);
     const tagStyles = clsx(
-        'flex items-center rounded py-2 px-4 ui-small h-10 w-fit border border-green-800 transition bg-duration-300',
+        'flex items-center rounded py-2 px-2 md:px-4 ui-small h-10 w-fit border border-green-800 transition bg-duration-300 text-md',
         {
             'bg-green-900 hover:bg-emerald-900' : selected
         }

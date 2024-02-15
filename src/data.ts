@@ -27,7 +27,7 @@ export const cards: CardTypes[] = [
     },
     {
         category:["frontend"], title: "Mini Games", image2: gamePic, subtitle: "JavaScript, HTML/CSS", 
-        description: "Jan 2022 (8-Ball) & June 2023 (Rock, Paper, Scissors)/ A collection of minigames built purely with vanilla JavaScript ", link:"", link2: "https://rebeccatian.github.io/eight-ball/"
+        description: "Jan 2022 (8-Ball) & June 2023 (Rock, Paper, Scissors)/ A collection of minigames built purely with vanilla JavaScript ", link:"https://rebeccatian.github.io/rock-paper-scissors/", link2: "https://rebeccatian.github.io/eight-ball/"
     },
     {
         category:["frontend"], title: "Note App", image2: notePic, 
@@ -36,7 +36,7 @@ export const cards: CardTypes[] = [
     },
     {
         category:["frontend"], title: "Portfolio (this site!)", image2: portPic, subtitle: "React, TypeScript, Tailwind",
-        description: "September 2023 / New portfolio site made to host projects and act as an introduction to me", link:""
+        description: "September 2023 / New portfolio site made to host projects and act as an introduction to me", link:"https://rebeccatian.dev"
     },
     {
         category:["mobile"], title: "Anti-Boredom App", image2: boredomAppPic, subtitle: "Swift", 
