@@ -34,11 +34,11 @@ const Portfolio = () => {
 
     return (
         <div className="flex flex-col h-[80vh] overflow-auto">
-            <div className='p-4'>
+            <div className='p-4 flex flex-col text-right'>
                 <h1 className='text-xl'>My Works</h1>
                 <h2 className='py-4 text-sm'>Filters</h2>
 
-                <div className="flex space-x-2 flex-wrap">
+                <div className="flex space-x-2 flex-wrap self-end">
                     {
                         tags.map(item => {
                             return (
@@ -83,10 +83,10 @@ const Portfolio = () => {
                                     onClose={handleOnClose}
                                     content={
                                         <div>
-                                            <Image src={card.image2} alt="SeatGeek Project Image"/>
+                                            <Image height={300} src={card.image2} alt="SeatGeek Project Image"/>
                                             <p className="mt-4 ">{card.description}</p>
                                             <a className="text-green-300 underline" href={card.link}>{card.link2 ? '8-Ball' : 'Link to Project'}</a>
-                                            <a className={`text-green-300 underline ${!card.link2 ? 'hidden' : 'block'}`}>Rock, Paper, Scissors</a>
+                                            <a href={card.link2} className={`text-green-300 underline ${!card.link2 ? 'hidden' : 'block'}`}>Rock, Paper, Scissors</a>
                                         </div>
                                     }
                                 /> 

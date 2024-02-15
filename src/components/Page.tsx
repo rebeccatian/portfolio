@@ -4,7 +4,8 @@ import { Tab } from "@headlessui/react";
 import { ReactNode, useState } from "react";
 import Image from 'next/image';
 import profilePic from '../../public/me.png';
-import { TypeAnimation } from 'react-type-animation'
+import resumePic from '../../public/resume.png';
+import { TypeAnimation } from 'react-type-animation';
 
 interface MenuProps {
     children?: ReactNode
@@ -96,13 +97,14 @@ export default function Page({ children } : MenuProps) {
                         </Tab.Panel>
                         <Tab.Panel className="text-left space-y-4 ml-8">
                             <p className="text-xl">Social Links</p>
-                            <div className="space-x-4">
-                                <a href="https://github.com/rebeccatian">Github</a>
-                                <a href="https://linkedin.com/in/rebeccatianr">LinkedIn</a>
-                                <a href="mailto: rebeccatianr@gmail.com">Email</a>
+                            <div className="flex p-0">
+                                <a href="https://github.com/rebeccatian"><Image src="/github.png" alt="Github" width={100} height={100}></Image></a>
+                                <a className="grid place-items-center" href="https://linkedin.com/in/rebeccatianr"><Image src="/linkedin.png" alt="LinkedIn" width={75} height={75}></Image></a>
+                                <a className="grid place-items-center mx-7" href="mailto: rebeccatianr@gmail.com"><Image src="/email.png" alt="Email" width={75} height={85}></Image></a>
                             </div>
                             <p className="text-xl">Resume</p>
-                            <iframe></iframe>
+                            <a href="/resume.pdf" download><button className="text-sm md:text-md underline">Download Resume</button></a>
+                            <Image src={resumePic} alt="resume picture"></Image>
                         </Tab.Panel>
                     </Tab.Panels>
                 </div>
