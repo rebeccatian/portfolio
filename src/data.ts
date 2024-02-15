@@ -22,8 +22,8 @@ export const cards: CardTypes[] = [
         title: "Ticket Tracker",  
         image2: seatGeekPic, 
         subtitle: "Next.js, React, TypeScript, Tailwind, Prisma, PostgresSQL", 
-        description: "IN PROGRESS / Current version: an user can check the lowest prices from SeatGeek for any artist they input. Still working on adding database to store user data.", 
-        link:"https://ticket-tracker-rouge.vercel.app/"
+        description: "IN PROGRESS / Current version: can check lowest price, save events to your email, and check your saved events through email. Still working on adding email notifications.", 
+        link:"http://ticket-tracker.rebeccatian.dev/"
     },
     {
         category:["frontend"], title: "Mini Games", image2: gamePic, subtitle: "JavaScript, HTML/CSS", 
