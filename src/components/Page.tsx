@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import Portfolio from "@/components/portfolio";
+import Portfolio from "./portfolio";
 import { Tab } from "@headlessui/react";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from 'next/image';
 import profilePic from '../../public/me.png';
 import { TypeAnimation } from 'react-type-animation'
@@ -45,8 +45,8 @@ export default function Page({ children } : MenuProps) {
                         <Tab className="text-left w-fit hover:cursor-pointer ui-selected:text-green-200">Projects</Tab>
                         <Tab className="text-left w-fit hover:cursor-pointer ui-selected:text-green-200">Info</Tab>
                     </Tab.List>
-                    <Tab.Panels className="md:mt-0 mt-12 w-2/3 md:1/4">
-                        <Tab.Panel className="text-left text-xs md:text-sm flex flex-col w-full overflow-scroll">
+                    <Tab.Panels className="md:mt-0 mt-12 w-2/3 md:w-3/5">
+                        <Tab.Panel className="text-left text-xs md:text-sm flex flex-col w-full">
                             <div className="mb-3 self-end w-3/4 h-3/4 md:w-1/3 md:h-1/3">
                                 <Image src={profilePic} alt="picture of me"/>
                             </div>
@@ -90,10 +90,19 @@ export default function Page({ children } : MenuProps) {
                                 
                             </div>
                         </Tab.Panel>
-                        <Tab.Panel className="text-left">
+                        <Tab.Panel className="text-left md:ml-32 lg:ml-24">
                             <Portfolio/>
                         </Tab.Panel>
-                        <Tab.Panel className="text-left">Content 3</Tab.Panel>
+                        <Tab.Panel className="text-left space-y-4">
+                            <p className="text-xl">Social Links</p>
+                            <div className="space-x-4">
+                                <a href="https://github.com/rebeccatian">Github</a>
+                                <a href="https://linkedin.com/in/rebeccatianr">LinkedIn</a>
+                                <a href="mailto: rebeccatianr@gmail.com">Email</a>
+                            </div>
+                            <p className="text-xl">Resume</p>
+                            <iframe></iframe>
+                        </Tab.Panel>
                     </Tab.Panels>
                 </div>
         </Tab.Group>
