@@ -13,9 +13,7 @@ export interface CardTypes {
     subtitle: string;
     description: string;
     link: string;
-    link2?: string;
     githubLink?: string;
-    githubLink2?: string;
 }
 
 export const cards: CardTypes[] = [
@@ -30,9 +28,9 @@ export const cards: CardTypes[] = [
     },
     {
         category:["frontend"], title: "Mini Games", image2: gamePic, subtitle: "JavaScript, HTML/CSS", 
-        description: "Jan 2022 (8-Ball) & June 2023 (Rock, Paper, Scissors)/ A collection of minigames built purely with vanilla JavaScript ", 
-        link:"https://rebeccatian.github.io/eight-ball", link2: "https://rebeccatian.github.io/rock-paper-scissors/",
-        githubLink:"https://github.com/rebeccatian/eight-ball", githubLink2: "https://github.com/rebeccatian/rock-paper-scissors"
+        description: "Jan 2022 - Now / A collection of minigames built purely with vanilla JavaScript ", 
+        link:"https://rebeccatian.github.io/mini-games",
+        githubLink:"https://github.com/rebeccatian/mini-games"
     },
     {
         category:["frontend"], title: "Note App", image2: notePic, 

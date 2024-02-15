@@ -85,10 +85,8 @@ const Portfolio = () => {
                                         <div>
                                             <Image height={300} src={card.image2} alt="SeatGeek Project Image"/>
                                             <p className="mt-4 ">{card.description}</p>
-                                            <a className="text-green-300 underline" href={card.link}>{card.link2 ? '8-Ball' : 'Demo Link'}</a>
+                                            <a className="text-green-300 underline" href={card.link}>Demo Link</a>
                                             <a href={card.githubLink} className="text-green-300 underline block">Github Link</a>
-                                            <a href={card.link2} className={`text-green-300 underline ${!card.link2 ? 'hidden' : 'block'}`}>Rock, Paper, Scissors</a>
-                                            <a href={card.githubLink2} className={`text-green-300 underline ${!card.githubLink2 ? 'hidden' : 'block'}`}>Github Link</a>
                                         </div>
                                     }
                                 /> 
