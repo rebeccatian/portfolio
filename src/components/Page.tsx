@@ -94,7 +94,7 @@ export default function Page({ children } : MenuProps) {
                         <Tab.Panel className="text-left md:ml-32 lg:ml-24">
                             <Portfolio/>
                         </Tab.Panel>
-                        <Tab.Panel className="text-left space-y-4">
+                        <Tab.Panel className="text-left space-y-4 ml-8">
                             <p className="text-xl">Social Links</p>
                             <div className="space-x-4">
                                 <a href="https://github.com/rebeccatian">Github</a>
