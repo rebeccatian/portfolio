@@ -12,8 +12,8 @@ export interface CardTypes {
     image2: StaticImageData
     subtitle: string;
     description: string;
-    link: string;
-    githubLink?: string;
+    link?: string;
+    githubLink: string;
 }
 
 export const cards: CardTypes[] = [
@@ -45,13 +45,13 @@ export const cards: CardTypes[] = [
     },
     {
         category:["mobile"], title: "Anti-Boredom App", image2: boredomAppPic, subtitle: "Swift", 
-        description: "Nov 2022 / Mobile app that ultilizes API calls to randomly generate an activity for the user", link:"https://github.com/rebeccatian/anti-boredom-app"
+        description: "Nov 2022 / Mobile app that ultilizes API calls to randomly generate an activity for the user", githubLink:"https://github.com/rebeccatian/anti-boredom-app"
     },
     {
         category:["mobile", "backend"], title: "Bite Butler", image2: biteButler, subtitle: "React Native, Python, Firebase", 
-        description: "Hackathon 2023 Project / Mobile app that combines various restaurant ratings into one average rating and rank them accordingly", link:"https://github.com/rebeccatian/bite-butler"},
+        description: "Hackathon 2023 Project / Mobile app that combines various restaurant ratings into one average rating and rank them accordingly", githubLink:"https://github.com/rebeccatian/bite-butler"},
     {
         category:["backend"], title: "Flappy Bird", image2: flappyBird, subtitle: "Java, Java Swing", 
-        description: "Dec 2021 / Java Swing desktop remake of the game Flappy Bird", link:"https://github.com/rebeccatian/Flappy-Bird"
+        description: "Dec 2021 / Desktop app remake of the game Flappy Bird with Java Swing", githubLink:"https://github.com/rebeccatian/Flappy-Bird"
     }
 ]

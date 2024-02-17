@@ -83,9 +83,9 @@ const Portfolio = () => {
                                     onClose={handleOnClose}
                                     content={
                                         <div>
-                                            <Image height={300} src={card.image2} alt="SeatGeek Project Image"/>
+                                            <Image className="w-fit mx-auto" height={200} src={card.image2} alt="SeatGeek Project Image"/>
                                             <p className="mt-4 ">{card.description}</p>
-                                            <a className="text-green-300 underline" href={card.link} target="_blank" rel="noopener noreferrer">Demo Link</a>
+                                            <a className={card.link ? "text-green-300 underline" : "hidden"} href={card.link} target="_blank" rel="noopener noreferrer">Demo Link</a>
                                             <a href={card.githubLink} className="text-green-300 underline block" target="_blank" rel="noopener noreferrer">Github Link</a>
                                         </div>
                                     }
