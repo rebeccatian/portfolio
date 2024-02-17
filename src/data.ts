@@ -27,16 +27,16 @@ export const cards: CardTypes[] = [
         githubLink:"https://github.com/rebeccatian/ticket-tracker"
     },
     {
+        category:["frontend"], title: "Note App", image2: notePic, 
+        subtitle: "React, Redux, JavaScript, HTML/CSS", 
+        description: "Jan 2022 / A simple Note App made with Redux Toolkit that can create, add, edit, and delete.", link:"https://rebeccatian.github.io/note-app/",
+        githubLink: "https://github.com/rebeccatian/note-app"
+    },
+    {
         category:["frontend"], title: "Mini Games", image2: gamePic, subtitle: "JavaScript, HTML/CSS", 
         description: "Jan 2022 - Now / A collection of minigames built purely with vanilla JavaScript ", 
         link:"https://rebeccatian.github.io/mini-games",
         githubLink:"https://github.com/rebeccatian/mini-games"
-    },
-    {
-        category:["frontend"], title: "Note App", image2: notePic, 
-        subtitle: "React.js, HTML/CSS, JavaScript", 
-        description: "Jan 2022 / A simple Note App with abilites to create, add, edit, and delete.", link:"https://rebeccatian.github.io/my-app/",
-        githubLink: "https://github.com/rebeccatian/my-app"
     },
     {
         category:["frontend"], title: "Portfolio (this site!)", image2: portPic, subtitle: "React, TypeScript, Tailwind",
