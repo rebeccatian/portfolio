@@ -24,13 +24,13 @@ export default function Page({ children } : MenuProps) {
                         <TypeAnimation
                             sequence={[
                                 300,
-                                'Fullstack Developer',
+                                'Aspiring Product Owner',
                                 1000,
                                 'UI Engineer',
                                 1000,
                                 'Mobile Developer',
                                 1000,
-                                'Software Engineer'
+                                'Fullstack Developer'
                             ]}
                             wrapper="span"
                             speed={50}
@@ -103,8 +103,8 @@ export default function Page({ children } : MenuProps) {
                                 <a className="grid place-items-center mx-7" href="mailto: rebeccatianr@gmail.com"><Image src="/email.png" alt="Email" width={75} height={85}></Image></a>
                             </div>
                             <p className="text-xl">Resume</p>
-                            <a href="/resume.pdf" download><button className="text-sm md:text-md underline">Download Resume</button></a>
-                            <Image src={resumePic} alt="resume picture"></Image>
+                            <a href="/Resume_Tian.pdf" download><button className="text-sm md:text-md underline">Download Resume</button></a>
+                            <Image loading="lazy" src={resumePic} alt="resume picture"></Image>
                         </Tab.Panel>
                     </Tab.Panels>
                 </div>
