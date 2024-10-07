@@ -24,20 +24,20 @@ export default function Page({ children } : MenuProps) {
                         <TypeAnimation
                             sequence={[
                                 300,
-                                'Aspiring Product Owner',
+                                'Fullstack Developer',
                                 1000,
                                 'UI Engineer',
                                 1000,
                                 'Mobile Developer',
                                 1000,
-                                'Fullstack Developer'
+                                'Aspiring Product Manager'
                             ]}
                             wrapper="span"
                             speed={50}
                             style={{ fontSize: '1rem', display: 'inline-block', color: 'lightgreen'}}
                             repeat={0}
                         />
-                    : <span className="text-base inline-block text-green-300">Software Engineer</span>
+                    : <span className="text-base inline-block text-green-300">Aspiring Product Manager</span>
                 }
             <Tab.Group vertical selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                 <div className="flex justify-between relative h-[90%]">
@@ -56,7 +56,7 @@ export default function Page({ children } : MenuProps) {
                                     <TypeAnimation
                                         sequence={[
                                             'Beep bop, welcome to my portfolio. I am a lover of exciting technology, creative designs, and honestly just learning anything new! ' +
-                                            'Currently, I am working at MillerKnoll as an associate software engineer where my focus is to integrate cross-platform technology solutions.',
+                                            'Currently, I am working at MillerKnoll as a Software Developer where my focus is to integrate cross-platform technology solutions.',
                                             () => {
                                                 setIsButtonVisible(true);
                                             }
