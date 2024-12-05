@@ -1,4 +1,4 @@
-import { MouseEvent, useRef, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import Image from 'next/image';
 import FilterTag from './FilterTag'
 import { cards, CardTypes } from '../data'

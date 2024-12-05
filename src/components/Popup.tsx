@@ -30,7 +30,6 @@ export default function Popup(
         if (!(event.target instanceof HTMLElement) || event.target.tagName.toLowerCase() !== 'p') {
             setOpenedItems && setOpenedItems([]);
         }
-        console.log(event.target)
     }
 
     useOnClickOutside(buttonRef, handleClickOutside);
