@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 import Image from 'next/image';
 import FilterTag from './FilterTag'
 import { cards, CardTypes } from '../data'
@@ -8,6 +8,7 @@ const Portfolio = () => {
     const tags = ["frontend", "mobile", "backend"];
     const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend"]);
     const [openedItems, setOpenedItems] = useState<CardTypes[]>([])
+
     const handleOnClick = (event: MouseEvent<HTMLButtonElement>, value: string) => {
         if (selectedItems.includes(value)) {
             setSelectedItems(selectedItems.filter(item => item !== value));
@@ -18,8 +19,7 @@ const Portfolio = () => {
         
     }
 
-    const handleOnClose = (event: MouseEvent<HTMLButtonElement>) => {
-        const value = event.currentTarget.value;
+    const handleOnClose = (value: string | undefined) => {
         setOpenedItems(items => (
             items.filter(opened => opened.title !== value)
         ));
@@ -66,12 +66,14 @@ const Portfolio = () => {
                         )
                     }
             </div>
-            <div>
+            <>
                 {
                     openedItems.map(
                         (card, index) => {
                             return (
                                 <Popup
+                                    setOpenedItems={setOpenedItems}
+                                    openedItems={openedItems}
                                     key={card.title}
                                     value={card.title} 
                                     coordinates={
@@ -94,7 +96,7 @@ const Portfolio = () => {
                         }
                     )
                 }
-            </div>
+            </>
         </div>
       )
 }
