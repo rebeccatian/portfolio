@@ -89,7 +89,7 @@ const Portfolio = () => {
                                             <Image loading="lazy" className="w-fit mx-auto" height={200} src={card.image2} alt="Project Image"/>
                                             <p className="mt-4 ">{card.description}</p>
                                             {
-                                                card.descriptionLink && <Link className="text-green-300 underline" href={card.descriptionLink}>Read more about me!</Link>
+                                                card.descriptionLink && <Link className="text-green-300 underline" href={card.descriptionLink}>Read more!</Link>
                                             }
                                             <a className={card.demoLink ? "text-green-300 underline" : "hidden"} href={card.demoLink} target="_blank" rel="noopener noreferrer">Demo Link</a>
                                             <a href={card.githubLink} className="text-green-300 underline block" target="_blank" rel="noopener noreferrer">Github Link</a>

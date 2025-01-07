@@ -20,9 +20,9 @@ export interface CardTypes {
 
 export const cards: CardTypes[] = [
     {
-        category:["data"], title: "Bike Store Dashboard", subtitle: "SQL, Excel",
+        category:["data"], title: "Bike Store Dashboard", subtitle: "SQL, Tableau, Excel",
         image2: excelPic,
-        description: "Jan 2025 / Used SQL queries to analyze data from several databases for bike stores and create an interactive dashboard in Excel.", 
+        description: "Jan 2025 / Used SQL queries to analyze data from several databases for bike stores and used Tableau & Excel for data visualization.", 
         githubLink: "https://github.com/rebeccatian/bike-store-sql",
         descriptionLink: "/bike-store"
     },
