@@ -1,6 +1,6 @@
 import { CardTypes } from '@/data';
 import CloseIcon from '@mui/icons-material/Close';
-import { Dispatch, ReactNode, SetStateAction, use, useRef } from 'react';
+import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 interface PopupProps {
@@ -8,7 +8,6 @@ interface PopupProps {
     coordinates: {top: number, left: number}
     onClose: (value: string | undefined) => void
     value: string
-    ref?: React.RefObject<HTMLButtonElement>
     setOpenedItems?: Dispatch<SetStateAction<CardTypes[]>>
     openedItems?: CardTypes[]
 }
@@ -18,19 +17,23 @@ export default function Popup(
         content,
         coordinates,
         onClose,
-        ref,
         value,
-        setOpenedItems,
-        openedItems
+        setOpenedItems
     } : PopupProps) {
 
     const buttonRef = useRef<HTMLButtonElement>(null);
-
     const handleClickOutside = (event: MouseEvent | TouchEvent | FocusEvent) => {
-        if (!(event.target instanceof HTMLElement) || event.target.tagName.toLowerCase() !== 'p') {
+        if (event.target instanceof HTMLDivElement || event.target instanceof HTMLElement && event.target.tagName === 'main') {
+            console.log('clicked outside');
             setOpenedItems && setOpenedItems([]);
         }
     }
+
+    useEffect(() => {
+        if (buttonRef.current) {
+            buttonRef.current.focus();
+        }
+    }, [buttonRef])
 
     useOnClickOutside(buttonRef, handleClickOutside);
 
@@ -42,7 +45,8 @@ export default function Popup(
             <button
                 ref={buttonRef}
                 value={value}
-                className="ml-2 mt-1 flex justify-between" onClick={() => onClose(ref?.current?.value)}
+                className="ml-2 mt-1 flex justify-between" 
+                onClick={() => {onClose(buttonRef?.current?.value); console.log(buttonRef?.current?.value)}}
             >
                 <CloseIcon />
             </button>

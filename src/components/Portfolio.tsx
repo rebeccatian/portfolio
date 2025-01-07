@@ -3,10 +3,11 @@ import Image from 'next/image';
 import FilterTag from './FilterTag'
 import { cards, CardTypes } from '../data'
 import Popup from './Popup'
+import Link from 'next/link';
 
 const Portfolio = () => {
-    const tags = ["frontend", "mobile", "backend"];
-    const [selectedItems, setSelectedItems] = useState(["frontend", "mobile", "backend"]);
+    const tags = ["data", "frontend", "mobile", "backend"];
+    const [selectedItems, setSelectedItems] = useState(["data", "frontend", "mobile", "backend"]);
     const [openedItems, setOpenedItems] = useState<CardTypes[]>([])
 
     const handleOnClick = (event: MouseEvent<HTMLButtonElement>, value: string) => {
@@ -87,7 +88,10 @@ const Portfolio = () => {
                                         <div>
                                             <Image loading="lazy" className="w-fit mx-auto" height={200} src={card.image2} alt="Project Image"/>
                                             <p className="mt-4 ">{card.description}</p>
-                                            <a className={card.link ? "text-green-300 underline" : "hidden"} href={card.link} target="_blank" rel="noopener noreferrer">Demo Link</a>
+                                            {
+                                                card.descriptionLink && <Link className="text-green-300 underline" href={card.descriptionLink}>Read more about me!</Link>
+                                            }
+                                            <a className={card.demoLink ? "text-green-300 underline" : "hidden"} href={card.demoLink} target="_blank" rel="noopener noreferrer">Demo Link</a>
                                             <a href={card.githubLink} className="text-green-300 underline block" target="_blank" rel="noopener noreferrer">Github Link</a>
                                         </div>
                                     }

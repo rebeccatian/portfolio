@@ -23,12 +23,10 @@ export default function Page({ children } : MenuProps) {
                     isDone ?
                         <TypeAnimation
                             sequence={[
-                                300,
-                                'Fullstack Developer',
                                 1000,
                                 'UI Engineer',
                                 1000,
-                                'Mobile Developer',
+                                'Fullstack Developer',
                                 1000,
                                 'Aspiring Product Manager'
                             ]}
@@ -55,8 +53,7 @@ export default function Page({ children } : MenuProps) {
                                 <div className="border border-green-600 p-3 w-full">
                                     <TypeAnimation
                                         sequence={[
-                                            'Beep bop, welcome to my portfolio. I am a lover of exciting technology, creative designs, and honestly just learning anything new! ' +
-                                            'Currently, I am working at MillerKnoll as a Software Developer where my focus is to integrate cross-platform technology solutions.',
+                                            'Beep bop, I am a lover of exciting technology and driving innovative change! My passion lies at the cross-section of technology, design, and business, and I’m excited to leverage my background as a user interface engineer for a product analysis or development role. Let’s chat soon :)',
                                             () => {
                                                 setIsButtonVisible(true);
                                             }
