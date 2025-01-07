@@ -28,14 +28,14 @@ const BikeStore = () => (
         <p>First, I set up the database in Microsoft SQL Server, then wrote SQL queries to extract the relevant data. This process involved joining multiple tables and applying SQL functions to calculate revenue and total units sold. 
           See the <a href="https://github.com/rebeccatian/bike-store-sql/blob/main/query-data.sql">query-data.sql</a> file for the full code
         </p>
-        <img className="my-2 md:m-4" width="400" src="/carbon.png" alt="SQL Query Screenshot"/>
+        <img className="my-2 md:my-4 mx-auto" width="400" src="/carbon.png" alt="SQL Query Screenshot"/>
 
         <div className="w-full h-1 bg-slate-300 opacity-30 my-4"></div>
 
         <h3 className="mb-4 text-2xl">Data Import and Pivot Table Creation</h3>
         <p>After obtaining the desired dataset, I imported it into Excel and created pivot tables to summarize key metrics. These pivot tables served as the foundation for visualizing business trends across different stores.
         </p>
-        <img className="my-2 md:m-4" width="600" src="https://github.com/user-attachments/assets/d82b30f7-d67c-445a-a5f6-ad694a424b4b" alt="Excel Pivot Tables"/>
+        <img className="my-2 md:my-4 mx-auto" width="600" src="https://github.com/user-attachments/assets/d82b30f7-d67c-445a-a5f6-ad694a424b4b" alt="Excel Pivot Tables"/>
 
         <div className="w-full h-1 bg-slate-300 opacity-30 my-4"></div>
 
@@ -43,7 +43,7 @@ const BikeStore = () => (
         <p>Once the pivot tables were configured, I mapped them to corresponding charts, carefully adjusting formatting and axis labels for clarity. Finally, I incorporated slicers to enable dynamic filtering, resulting in an interactive dashboard that allows users to easily explore and visualize the data.
         You can download the <a href="/Bike Store Project copy.xlsx">Excel file here</a> and see the tables and dashboards in action.
         </p>
-        <video className="my-2 md:m-4" width="500" height="500" controls>
+        <video className="my-2 md:my-4 mx-auto" width="500" height="500" controls>
           <source src="/interactive-tables.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -54,10 +54,11 @@ const BikeStore = () => (
           The Tableau dashboard includes key metrics such as revenue, total units sold, and sales trends across different locations and time periods.
           Please click around the Tableau dashboard below to explore the data visualization. <a href="https://public.tableau.com/views/Book1_17362834757040/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">Here is the link</a> if you want to see it on Tableau Public.
         </p>
-        <div className="border w-full p-2">
+        <div className="border w-fit p-2 mx-auto">
           <iframe
-            className="mx-auto w-full"
-            src="https://public.tableau.com/views/Book1_17362834757040/Dashboard1?:showVizHome=no&:embed=true"
+            className="mx-auto max-w-[100%]"
+            src="https://public.tableau.com/views/Book1-Vertical/Dashboard1?:showVizHome=no&:embed=true"
+            width="800"
             height="1300"
           >
           </iframe>
