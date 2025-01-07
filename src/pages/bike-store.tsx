@@ -52,7 +52,7 @@ const BikeStore = () => (
         <p className="mb-4">To further enhance data exploration, I visualized the same dataset using Tableau. 
           This allowed for a more interactive and visually appealing representation of the bike sales data. 
           The Tableau dashboard includes key metrics such as revenue, total units sold, and sales trends across different locations and time periods.
-          Please click around the Tableau dashboard below to explore the data visualization. <a href="https://public.tableau.com/views/Book1_17362834757040/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">Here's the link</a> if you want to see it on Tableau Public.
+          Please click around the Tableau dashboard below to explore the data visualization. <a href="https://public.tableau.com/views/Book1_17362834757040/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">Here is the link</a> if you want to see it on Tableau Public.
         </p>
         <div className="border w-full p-2">
           <iframe
